@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item
     android:title="Home"
-    android:icon="@drawable/baseline_cabin_24"
+    android:icon="@drawable/ic_home"
     android:id="@+id/homeFragment"
     />
 
     <item
         android:title="Favorites"
-        android:icon="@drawable/baseline_checklist_rtl_24"
+        android:icon="@drawable/ic_favourite"
         android:id="@+id/favouritesFragment"/>
 
     <item
