@@ -1,5 +1,6 @@
 package com.example.easyfood.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,9 +10,11 @@ import com.example.easyfood.pojo.Category
 
 class CategoriesAdapter() : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder>() {
     private var categoriesList = ArrayList<Category>()
+    var onItemClick: ((Category) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setCategoriesList(categoryList: List<Category>) {
-        this.categoriesList = categoryList as ArrayList<Category>
+        this.categoriesList = ArrayList(categoryList)
         notifyDataSetChanged()
     }
 
@@ -34,6 +37,10 @@ class CategoriesAdapter() : RecyclerView.Adapter<CategoriesAdapter.CategoryViewH
         Glide.with(holder.itemView).load(categoriesList[position].strCategoryThumb)
             .into(holder.binding.imgCategory)
         holder.binding.tvCategoryName.text = categoriesList[position].strCategory
+
+        holder.itemView.setOnClickListener {
+            onItemClick!!.invoke(categoriesList[position])
+        }
     }
 
 
