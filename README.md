@@ -8,7 +8,7 @@ EasyFood is an app that makes making food easier and gives you full information 
 
 **Room** : Save meals in local database.
 
-**MVVM & LiveData** : Saperate logic code from views and save the state in case the screen configuration changes.
+**MVVM & LiveData** : Separate logic code from views and save the state in case the screen configuration changes.
 
 **Coroutines** : do some code in the background.
 
