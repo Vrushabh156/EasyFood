@@ -1,4 +1,4 @@
-package com.example.easyfood.pojo
+package com.example.easyfood.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

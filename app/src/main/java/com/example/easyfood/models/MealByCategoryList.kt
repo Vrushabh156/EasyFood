@@ -1,4 +1,4 @@
-package com.example.easyfood.pojo
+package com.example.easyfood.models
 
 data class MealByCategoryList(
     val meals: List<MealsByCategory>

@@ -6,7 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.easyfood.pojo.Meal
+import com.example.easyfood.models.Meal
 
 @Dao
 interface MealDao {

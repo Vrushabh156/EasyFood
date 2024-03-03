@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.easyfood.pojo.Meal
+import com.example.easyfood.models.Meal
 
 @Database(entities = [Meal::class], version = 1)
 @TypeConverters(MealTypeConvertor::class)
@@ -22,7 +22,8 @@ abstract class MealDatabase : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(
                     context, MealDatabase::class.java,
                     "meal.db"
-                ).fallbackToDestructiveMigration().build()
+                ).fallbackToDestructiveMigration()
+                    .build()
             }
             return INSTANCE as MealDatabase
         }
