@@ -6,6 +6,7 @@
         <item name="colorPrimaryVariant">@color/accent</item>
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
     <style name="Theme.EasyFood" parent="Base.Theme.EasyFood" />

@@ -9,6 +9,7 @@ import com.example.easyfood.models.MealsByCategory
 
 class MostPopularAdapter() : RecyclerView.Adapter<MostPopularAdapter.PopularMealViewHolder>() {
     lateinit var onItemClick: ((MealsByCategory) -> Unit)
+    var onLongItemClick: ((MealsByCategory) -> Unit)? = null
     private var mealsList = ArrayList<MealsByCategory>()
 
     fun setMeals(mealsList: ArrayList<MealsByCategory>) {
@@ -38,6 +39,14 @@ class MostPopularAdapter() : RecyclerView.Adapter<MostPopularAdapter.PopularMeal
         holder.itemView.setOnClickListener {
             onItemClick.invoke(mealsList[position])
         }
+
+        holder.itemView.setOnClickListener {
+            onLongItemClick?.invoke(
+                mealsList[position]
+            )
+            true
+        }
+
     }
 
     class PopularMealViewHolder(val binding: PopularItemsBinding) :
