@@ -54,12 +54,13 @@ class FavouritesFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
-                viewModel.deleteMeal(favoritesMealsAdapter.differ.currentList[position])
+                val deletedMeal = favoritesMealsAdapter.differ.currentList[position]
+                viewModel.deleteMeal(deletedMeal)
 
                 Snackbar.make(requireView(), "Meal deleted", Snackbar.LENGTH_LONG).setAction(
                     "Undo",
                     View.OnClickListener {
-                        viewModel.insertMeal(favoritesMealsAdapter.differ.currentList[position])
+                        viewModel.insertMeal(deletedMeal)
                     }
                 ).show()
             }
