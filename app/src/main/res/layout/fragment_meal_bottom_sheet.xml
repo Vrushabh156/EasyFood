@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/bottom_sheet"
-    tools:context=".fragments.bottomsheet.MealBottomSheetFragment">
+    tools:context=".ui.fragments.bottomsheet.MealBottomSheetFragment">
 
     <ImageView
         android:id="@+id/img_bottom_sheet"
