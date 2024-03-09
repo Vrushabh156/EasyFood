@@ -1,5 +1,6 @@
 package com.example.easyfood.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.easyfood.ui.activities.MainActivity
 import com.example.easyfood.ui.adapters.CategoriesAdapter
 import com.example.easyfood.databinding.FragmentCategoriesBinding
+import com.example.easyfood.ui.activities.CategoryMealsActivity
 import com.example.easyfood.ui.viewModels.HomeViewModel
 
 class CategoriesFragment : Fragment() {
@@ -38,6 +40,11 @@ class CategoriesFragment : Fragment() {
         prepareRecyclerView()
 
         observeCategory()
+
+        prepareCategoriesRecyclerView()
+        viewModel.getCategories()
+        observeCategoriesLivedata()
+        onCategoryClick()
     }
 
     private fun observeCategory() {
@@ -52,5 +59,27 @@ class CategoriesFragment : Fragment() {
             layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
             adapter = categoriesAdapter
         }
+    }
+
+    private fun onCategoryClick() {
+        categoriesAdapter.onItemClick = { category ->
+            val intent = Intent(activity, CategoryMealsActivity::class.java)
+            intent.putExtra(HomeFragment.CATEGORY_NAME, category.strCategory)
+            startActivity(intent)
+        }
+    }
+
+    private fun prepareCategoriesRecyclerView() {
+        categoriesAdapter = CategoriesAdapter()
+        binding.rvCategories.apply {
+            layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
+            adapter = categoriesAdapter
+        }
+    }
+
+    private fun observeCategoriesLivedata() {
+        viewModel.observeCategoriesLivedata().observe(viewLifecycleOwner, Observer { categories ->
+            categoriesAdapter.setCategoriesList(categories)
+        })
     }
 }
