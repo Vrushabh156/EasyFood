@@ -5,22 +5,23 @@ plugins {
 }
 
 android {
-    namespace = "com.example.easyfood"
+    namespace = "com.appsbit.easyfood"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.easyfood"
+        applicationId = "com.appsbit.easyfood"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isShrinkResources = true
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
