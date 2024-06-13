@@ -108,13 +108,17 @@
 
             <TextView
                 android:id="@+id/tv_instructions_Steps"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
                 android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/tv_instruction"
                 app:layout_constraintTop_toBottomOf="@id/tv_instruction" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
