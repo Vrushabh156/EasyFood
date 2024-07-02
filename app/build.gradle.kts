@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.activity:activity:1.8.0")
     val nav_version = "2.7.6"
     val lifecycle_version = "2.7.0"
     implementation("androidx.core:core-ktx:1.12.0")

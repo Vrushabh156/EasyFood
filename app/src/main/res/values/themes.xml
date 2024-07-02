@@ -17,4 +17,11 @@
     </style>
 
     <style name="Theme.EasyFood" parent="Base.Theme.EasyFood" />
+
+    <style name="Theme.BudgetBuddies.BlueStatusBar" parent="Theme.EasyFood">
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textStyle"></item>
+    </style>
+
 </resources>
